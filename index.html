@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+  <meta name="apple-mo                 ile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#018383">
+  <meta name="description" content="Website resmi destinasi wisata Kota Tangerang Selatan. Temukan berbagai tempat menarik untuk dikunjungi.">
+  <title>Wisata Tangerang Selatan - Explore Destinasi Menarik</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#018383" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111" media="(prefers-color-scheme: dark)">
+
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png">
+
+<!-- Safari Pinned Tab -->
+<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#018383">
+
+<!-- MS Application -->
+<meta name="msapplication-TileColor" content="#018383">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wisatatangsel.com/">
+<meta property="og:title" content="Wisata Tangerang Selatan - Explore Destinasi Menarik">
+<meta property="og:description" content="Temukan berbagai destinasi menarik di Kota Tangerang Selatan">
+<meta property="og:image" content="/images/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://wisatatangsel.com/">
+<meta property="twitter:title" content="Wisata Tangerang Selatan - Explore Destinasi Menarik">
+<meta property="twitter:description" content="Temukan berbagai destinasi menarik di Kota Tangerang Selatan">
+<meta property="twitter:image" content="/images/twitter-image.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://wisatatangsel.com/">
+
+<!-- Preload critical resources -->
+<link rel="preload" href="css/style.css" as="style">
+<link rel="preload" href="js/app.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+<!-- Preconnect to important domains -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maps.google.com">
+<link rel="preconnect" href="https://www.youtube.com">
+</head>
+<body data-theme="dark">
+  <!-- Header Section -->
+  <header role="banner">
+    <button class="theme-toggle" id="themeToggle" aria-label="Ubah tema">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+    
+    <div class="header-content">
+      <h1 class="header-title">
+        <span class="title-main">Daya Tarik Wisata</span>
+        <span class="title-sub">Kota Tangerang Selatan</span>
+      </h1>
+    </div>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Logo_Pesona_Indonesia_%28Kementerian_Pariwisata%29.png/1200px-Logo_Pesona_Indonesia_%28Kementerian_Pariwisata%29.png" 
+         alt="Wonderful Indonesia - Logo Kementerian Pariwisata" 
+         class="logo-kanan"
+         loading="lazy">
+  </header>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Buka menu navigasi">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- Mobile Navigation Sidebar -->
+  <div class="mobile-nav-sidebar" id="mobileNavSidebar">
+    <div class="mobile-nav-header">
+      <h3 class="mobile-nav-title">Menu Navigasi</h3>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Tutup menu">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav-search">
+      <div class="mobile-search-box">
+        <input type="text" 
+               class="mobile-search-input" 
+               placeholder="Cari destinasi..."
+               id="mobileSearchInput">
+        <button class="mobile-search-btn" id="mobileSearchBtn">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-section">
+        <div class="mobile-nav-section-title">Menu Utama</div>
+        <div class="mobile-nav-items">
+          <button class="mobile-nav-item active" data-section="home">
+            <i class="fas fa-home mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Beranda</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="favorites">
+            <i class="fas fa-heart mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Favorit Saya</span>
+            <span class="mobile-nav-badge" id="mobileFavoriteCount">0</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="statistics">
+            <i class="fas fa-chart-bar mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Statistik</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="mobile-nav-section">
+        <div class="mobile-nav-section-title">Kecamatan</div>
+        <div class="mobile-nav-items">
+          <button class="mobile-nav-item" data-section="ciputat">
+            <i class="fas fa-map-marker-alt mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Ciputat</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="ciputattimur">
+            <i class="fas fa-tree mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Ciputat Timur</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="setu">
+            <i class="fas fa-water mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Setu</span>
+            <span class="mobile-nav-badge">1</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="pondokaren">
+            <i class="fas fa-shopping-cart mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Pondok Aren</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="pamulang">
+            <i class="fas fa-university mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Pamulang</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="serpong">
+            <i class="fas fa-building mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Serpong</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-section="serpongutara">
+            <i class="fas fa-city mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Serpong Utara</span>
+            <span class="mobile-nav-badge">2</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="mobile-nav-section">
+        <div class="mobile-nav-section-title">Kategori</div>
+        <div class="mobile-nav-items">
+          <button class="mobile-nav-item" data-filter="alam">
+            <i class="fas fa-tree mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Wisata Alam</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-filter="kuliner">
+            <i class="fas fa-utensils mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Kuliner</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-filter="belanja">
+            <i class="fas fa-shopping-bag mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Belanja</span>
+          </button>
+          
+          <button class="mobile-nav-item" data-filter="edukasi">
+            <i class="fas fa-graduation-cap mobile-nav-icon" aria-hidden="true"></i>
+            <span class="mobile-nav-text">Edukasi</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mobile-quick-actions">
+      <button class="mobile-action-btn" onclick="showSection('home')">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        &nbsp;Kembali ke Beranda
+      </button>
+      <button class="mobile-action-btn secondary" onclick="toggleTheme()">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+        &nbsp;Ubah Tema
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <div class="bottom-nav" id="bottomNav">
+    <div class="bottom-nav-items">
+      <button class="bottom-nav-item active" data-section="home">
+        <i class="fas fa-home bottom-nav-icon" aria-hidden="true"></i>
+        <span class="bottom-nav-text">Home</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-section="favorites">
+        <i class="fas fa-heart bottom-nav-icon" aria-hidden="true"></i>
+        <span class="bottom-nav-text">Favorit</span>
+        <span class="bottom-nav-badge" id="bottomFavoriteCount">0</span>
+      </button>
+      
+      <button class="bottom-nav-item" id="mobileMenuBottomBtn">
+        <i class="fas fa-compass bottom-nav-icon" aria-hidden="true"></i>
+        <span class="bottom-nav-text">Jelajahi</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-section="statistics">
+        <i class="fas fa-chart-bar bottom-nav-icon" aria-hidden="true"></i>
+        <span class="bottom-nav-text">Stats</span>
+      </button>
+      
+      <button class="bottom-nav-item" onclick="toggleTheme()">
+        <i class="fas fa-palette bottom-nav-icon" aria-hidden="true"></i>
+        <span class="bottom-nav-text">Tema</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Desktop Navigation -->
+  <nav id="mainNav" role="navigation" aria-label="Navigasi utama">
+    <div class="nav-container">
+      <button data-section="home" class="nav-btn active" aria-current="page">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <span class="nav-text">Beranda</span>
+      </button>
+      
+      <button data-section="ciputat" class="nav-btn">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span class="nav-text">Ciputat</span>
+      </button>
+      
+      <button data-section="ciputattimur" class="nav-btn">
+        <i class="fas fa-tree" aria-hidden="true"></i>
+        <span class="nav-text">Ciputat Timur</span>
+      </button>
+      
+      <button data-section="setu" class="nav-btn">
+        <i class="fas fa-water" aria-hidden="true"></i>
+        <span class="nav-text">Setu</span>
+      </button>
+      
+      <button data-section="pondokaren" class="nav-btn">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        <span class="nav-text">Pondok Aren</span>
+      </button>
+      
+      <button data-section="pamulang" class="nav-btn">
+        <i class="fas fa-university" aria-hidden="true"></i>
+        <span class="nav-text">Pamulang</span>
+      </button>
+      
+      <button data-section="serpong" class="nav-btn">
+        <i class="fas fa-building" aria-hidden="true"></i>
+        <span class="nav-text">Serpong</span>
+      </button>
+      
+      <button data-section="serpongutara" class="nav-btn">
+        <i class="fas fa-city" aria-hidden="true"></i>
+        <span class="nav-text">Serpong Utara</span>
+      </button>
+      
+      <button data-section="favorites" class="nav-btn">
+        <i class="fas fa-heart" aria-hidden="true"></i>
+        <span class="nav-text">Favorit Saya</span>
+        <span class="favorite-count" id="favoriteCount">0</span>
+      </button>
+      
+      <button data-section="statistics" class="nav-btn">
+        <i class="fas fa-chart-bar" aria-hidden="true"></i>
+        <span class="nav-text">Statistik</span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Search Section -->
+  <section class="search-section" role="search" aria-label="Pencarian destinasi">
+    <div class="search-container">
+      <div class="search-box">
+        <div class="search-input-group">
+          <i class="fas fa-search search-icon" aria-hidden="true"></i>
+          <input type="text" 
+                 id="searchInput" 
+                 placeholder="Cari destinasi wisata, contoh: Taman, Mall, Kuliner..."
+                 aria-label="Masukkan kata kunci pencarian destinasi wisata">
+          <button class="search-clear" id="searchClear" aria-label="Hapus pencarian">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button id="searchButton" class="search-submit">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <span class="search-text">Cari</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Filter Section -->
+  <section class="filter-section" aria-label="Filter destinasi">
+    <div class="filter-container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">
+          <i class="fas fa-th-large" aria-hidden="true"></i>
+          Semua
+        </button>
+        <button class="filter-btn" data-filter="alam" aria-pressed="false">
+          <i class="fas fa-tree" aria-hidden="true"></i>
+          Alam
+        </button>
+        <button class="filter-btn" data-filter="keluarga" aria-pressed="false">
+          <i class="fas fa-home" aria-hidden="true"></i>
+          Keluarga
+        </button>
+        <button class="filter-btn" data-filter="belanja" aria-pressed="false">
+          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+          Belanja
+        </button>
+        <button class="filter-btn" data-filter="edukasi" aria-pressed="false">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          Edukasi
+        </button>
+        <button class="filter-btn" data-filter="kuliner" aria-pressed="false">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          Kuliner
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <main class="content" role="main">
+    <!-- Home Section -->
+    <section id="home" class="section active" aria-labelledby="home-title">
+      <div class="welcome-hero">
+        <div class="hero-content">
+          <h1 id="home-title" class="hero-title">Selamat Datang di <span class="highlight">Wisata Tangsel</span></h1>
+          <p class="hero-description">
+            Temukan berbagai destinasi menarik di Kota Tangerang Selatan. Dari wisata alam yang menyejukkan 
+            hingga pusat perbelanjaan modern, semua ada di sini.
+          </p>
+        </div>
+        
+        <div class="hero-video">
+          <a href="https://youtu.be/SuJKE95DrWU" 
+            target="_blank" 
+                rel="noopener noreferrer"
+              style="display:block; width:100%; height:100%;">
+
+               <img
+               src="https://img.youtube.com/vi/SuJKE95DrWU/hqdefault.jpg"
+             alt="Thumbnail Video Wisata Tangerang Selatan"
+            style="width:100%; height:100%; object-fit:cover; display:block;">
+             <!-- Icon Play -->
+  <span
+    aria-hidden="true"
+    style="
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:64px;
+      color:white;
+      background:rgba(0,0,0,0.25);
+      pointer-events:none;
+    ">
+    ▶
+  </span>
+
+</a>
+            </iframe>
+          </div>
+                <small class="video-caption"></small>
+        </div>
+      </div>
+
+      
+      <!-- Popular Destinations -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-fire" aria-hidden="true"></i>
+            Destinasi Populer
+          </h2>
+          <p class="section-subtitle">Tempat wisata paling banyak dikunjungi</p>
+        </div>
+        
+        <div id="popularDestinations" class="popular-grid" role="list" aria-label="Daftar destinasi populer">
+          <!-- Popular destinations will be loaded dynamically -->
+        </div>
+      </div>
+      
+      <!-- Categories -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-th-large" aria-hidden="true"></i>
+            Kategori Wisata
+          </h2>
+          <p class="section-subtitle">Jelajahi berdasarkan kategori favorit Anda</p>
+        </div>
+        
+        <div class="categories-grid" role="list" aria-label="Daftar kategori wisata">
+          <div class="category-card" data-filter="alam" role="listitem">
+            <div class="category-icon alam">
+              <i class="fas fa-tree" aria-hidden="true"></i>
+            </div>
+            <h3 class="category-title">Wisata Alam</h3>
+            <p class="category-description">Nikmati keindahan alam dan udara segar</p>
+            <span class="category-count" id="countAlam">0 destinasi</span>
+          </div>
+          
+          <div class="category-card" data-filter="kuliner" role="listitem">
+            <div class="category-icon kuliner">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </div>
+            <h3 class="category-title">Kuliner</h3>
+            <p class="category-description">Tempat makan dan kuliner terbaik</p>
+            <span class="category-count" id="countKuliner">0 destinasi</span>
+          </div>
+          
+          <div class="category-card" data-filter="belanja" role="listitem">
+            <div class="category-icon belanja">
+              <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+            </div>
+            <h3 class="category-title">Belanja</h3>
+            <p class="category-description">Pusat perbelanjaan dan retail</p>
+            <span class="category-count" id="countBelanja">0 destinasi</span>
+          </div>
+          
+          <div class="category-card" data-filter="edukasi" role="listitem">
+            <div class="category-icon edukasi">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <h3 class="category-title">Edukasi</h3>
+            <p class="category-description">Belajar sambil berekreasi</p>
+            <span class="category-count" id="countEdukasi">0 destinasi</span>
+          </div>
+          
+          <div class="category-card" data-filter="keluarga" role="listitem">
+            <div class="category-icon keluarga">
+              <i class="fas fa-home" aria-hidden="true"></i>
+            </div>
+            <h3 class="category-title">Keluarga</h3>
+            <p class="category-description">Rekreasi untuk seluruh keluarga</p>
+            <span class="category-count" id="countKeluarga">0 destinasi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="section" aria-labelledby="favorites-title" hidden>
+      <div class="section-card">
+        <div class="section-header">
+          <h2 id="favorites-title" class="section-title">
+            <i class="fas fa-heart" aria-hidden="true"></i>
+            Destinasi Favorit Saya
+          </h2>
+          <p class="section-subtitle">Kumpulan tempat wisata yang Anda sukai</p>
+        </div>
+        
+        <div id="favoritesList" class="favorites-container" role="list" aria-label="Daftar destinasi favorit">
+          <div class="favorites-empty">
+            <i class="far fa-heart" aria-hidden="true"></i>
+            <h3>Belum ada favorit</h3>
+            <p>Tambahkan destinasi ke favorit dengan menekan ikon hati</p>
+            <button class="btn btn-primary" onclick="showSection('home')">
+              <i class="fas fa-explore" aria-hidden="true"></i>
+              Jelajahi Destinasi
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="section" aria-labelledby="statistics-title" hidden>
+      <div class="section-card">
+        <div class="section-header">
+          <h2 id="statistics-title" class="section-title">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            Statistik Wisata Tangerang Selatan
+          </h2>
+          <p class="section-subtitle">Data dan informasi terkini tentang destinasi wisata</p>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card primary">
+            <div class="stat-icon">
+              <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalDestinations">0</div>
+              <div class="stat-label">Total Daya Tarik Wiswata</div>
+            </div>
+          </div>
+          
+          <div class="stat-card secondary">
+            <div class="stat-icon">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalFavorites">0</div>
+              <div class="stat-label">Total Favorit</div>
+            </div>
+          </div>
+          
+          <div class="stat-card success">
+            <div class="stat-icon">
+              <i class="fas fa-tags" aria-hidden="true"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalCategories">0</div>
+              <div class="stat-label">Kategori Wisata</div>
+            </div>
+          </div>
+          
+          <div class="stat-card warning">
+            <div class="stat-icon">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number" id="totalDistricts">7</div>
+              <div class="stat-label">Kecamatan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- District Sections -->
+    <section id="ciputat" class="section district-section" aria-labelledby="ciputat-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="ciputat-title" class="district-title">Wisata Ciputat</h1>
+          <p class="district-subtitle">Telusuri berbagai destinasi menarik di Kecamatan Ciputat</p>
+        </div>
+      </div>
+      
+      <div id="ciputatContent" class="destinations-container" role="list" aria-label="Daftar destinasi Ciputat">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="ciputattimur" class="section district-section" aria-labelledby="ciputattimur-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="ciputattimur-title" class="district-title">Wisata Ciputat Timur</h1>
+          <p class="district-subtitle">Jelajahi tempat wisata menarik di Kecamatan Ciputat Timur</p>
+        </div>
+      </div>
+      
+      <div id="ciputattimurContent" class="destinations-container" role="list" aria-label="Daftar destinasi Ciputat Timur">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="setu" class="section district-section" aria-labelledby="setu-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="setu-title" class="district-title">Wisata Setu</h1>
+          <p class="district-subtitle">Temukan keindahan wisata di Kecamatan Setu</p>
+        </div>
+      </div>
+      
+      <div id="setuContent" class="destinations-container" role="list" aria-label="Daftar destinasi Setu">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="pondokaren" class="section district-section" aria-labelledby="pondokaren-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="pondokaren-title" class="district-title">Wisata Pondok Aren</h1>
+          <p class="district-subtitle">Destinasi menarik di Kecamatan Pondok Aren</p>
+        </div>
+      </div>
+      
+      <div id="pondokarenContent" class="destinations-container" role="list" aria-label="Daftar destinasi Pondok Aren">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="pamulang" class="section district-section" aria-labelledby="pamulang-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="pamulang-title" class="district-title">Wisata Pamulang</h1>
+          <p class="district-subtitle">Jelajahi wisata di Kecamatan Pamulang</p>
+        </div>
+      </div>
+      
+      <div id="pamulangContent" class="destinations-container" role="list" aria-label="Daftar destinasi Pamulang">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="serpong" class="section district-section" aria-labelledby="serpong-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="serpong-title" class="district-title">Wisata Serpong</h1>
+          <p class="district-subtitle">Destinasi populer di Kecamatan Serpong</p>
+        </div>
+      </div>
+      
+      <div id="serpongContent" class="destinations-container" role="list" aria-label="Daftar destinasi Serpong">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="serpongutara" class="section district-section" aria-labelledby="serpongutara-title" hidden>
+      <div class="district-hero">
+        <div class="district-header">
+          <h1 id="serpongutara-title" class="district-title">Wisata Serpong Utara</h1>
+          <p class="district-subtitle">Tempat wisata menarik di Kecamatan Serpong Utara</p>
+        </div>
+      </div>
+      
+      <div id="serpongutaraContent" class="destinations-container" role="list" aria-label="Daftar destinasi Serpong Utara">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </section>
+    
+    <!-- No Results Section -->
+    <section id="no-results" class="section" aria-labelledby="no-results-title" hidden>
+      <div class="no-results">
+        <div class="no-results-icon">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </div>
+        <h2 id="no-results-title">Tidak ada hasil yang ditemukan</h2>
+        <p class="no-results-description">
+          Coba kata kunci lain atau hapus filter untuk melihat semua destinasi.
+        </p>
+        <div class="no-results-actions">
+          <button class="btn btn-primary" onclick="showSection('home')">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            Kembali ke Beranda
+          </button>
+          <button class="btn btn-outline" id="clearSearchResults">
+            <i class="fas fa-times" aria-hidden="true"></i>
+            Hapus Pencarian
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Loading Spinner -->
+  <div class="loading-spinner" id="loadingSpinner" aria-live="polite" aria-label="Memuat data">
+    <div class="spinner-container">
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="loading-text">Memuat data destinasi...</p>
+    </div>
+  </div>
+  
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+  
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Wisata Tangerang Selatan</h3>
+        <p class="footer-description">
+          Portal informasi destinasi wisata terpercaya di Kota Tangerang Selatan. 
+          Menyajikan informasi lengkap dan terupdate untuk para wisatawan.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Kontak</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> info@wisatatangsel.com</p>
+          <p><i class="fas fa-phone" aria-hidden="true"></i> +62 21 1234 5678</p>
+          <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tangerang Selatan, Banten</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Tautan Cepat</h4>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+          <a href="#home" onclick="showSection('home')">Beranda</a>
+          <a href="#statistics" onclick="showSection('statistics')">Statistik</a>
+          <a href="#favorites" onclick="showSection('favorites')">Favorit</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 UNPAM SQUAD. All rights reserved.</p>
+      <p>Website Wisata Kota Tangerang Selatan</p>
+    </div>
+  </footer>
+
+<!-- JavaScript Files -->
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/search.js"></script>
+<script src="js/favorites.js"></script>
+<script src="js/statistics.js"></script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script> <!-- HARUS TERAKHIR -->
+</body>
+</html>

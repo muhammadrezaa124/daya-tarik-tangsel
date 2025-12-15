@@ -1,0 +1,942 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Devices (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  
+  .popular-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Medium Devices (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-title {
+    font-size: 2rem;
+  }
+  
+  .title-main {
+    font-size: 1.8rem;
+  }
+  
+  .title-sub {
+    font-size: 1.3rem;
+  }
+  
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .nav-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .welcome-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Small Devices (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .header-title {
+    font-size: 1.8rem;
+  }
+  
+  .title-main {
+    font-size: 1.5rem;
+  }
+  
+  .title-sub {
+    font-size: 1.1rem;
+  }
+  
+  .logo-kanan {
+    height: 50px;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .theme-toggle {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  /* Navigation for tablets */
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+  
+  .nav-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  .search-section, 
+  .filter-section {
+    margin: 1rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .welcome-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .card-content {
+    flex-direction: column;
+  }
+  
+  .card-media {
+    flex-direction: column;
+  }
+  
+  .media-item {
+    min-width: 100%;
+  }
+  
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Card adjustments for tablets */
+  .section-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .card-actions {
+    align-self: flex-end;
+  }
+  
+  .district-hero {
+    padding: 1.5rem;
+  }
+  
+  .district-title {
+    font-size: 1.5rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 1rem;
+  }
+}
+
+/* Extra Small Devices (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .header-title {
+    font-size: 1.5rem;
+    padding: 0 3rem;
+  }
+  
+  .title-main {
+    font-size: 1.3rem;
+  }
+  
+  .title-sub {
+    font-size: 1rem;
+  }
+  
+  .logo-kanan {
+    height: 40px;
+  }
+  
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Navigation for small tablets */
+  .nav-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-btn {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  
+  .search-section, 
+  .filter-section {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .search-box {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .search-input-group {
+    border-radius: 8px;
+  }
+  
+  .search-input-group input {
+    padding: 0.8rem 0;
+  }
+  
+  .search-submit {
+    border-radius: 8px;
+    padding: 0.8rem;
+    justify-content: center;
+  }
+  
+  .filter-container {
+    padding: 1rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.3rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .content {
+    padding: 0.5rem;
+  }
+  
+  .welcome-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content {
+    padding: 1rem 0;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .popular-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .category-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  /* Card mobile optimizations */
+  .section-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  
+  .card-content {
+    gap: 1rem;
+  }
+  
+  .card-text {
+    min-width: 100%;
+  }
+  
+  .card-media {
+    gap: 1rem;
+  }
+  
+  .destination-info {
+    font-size: 0.9rem;
+  }
+  
+  .rating {
+    flex-wrap: wrap;
+  }
+  
+  /* Back to top button mobile */
+  .back-to-top {
+    bottom: 6rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Devices (0 - 575px) */
+@media (max-width: 575px) {
+  header {
+    padding: 1rem 0.5rem;
+    position: relative;
+  }
+  
+  .header-title {
+    font-size: 1.3rem;
+    padding: 0 2.5rem;
+    line-height: 1.3;
+  }
+  
+  .title-main {
+    font-size: 1.1rem;
+  }
+  
+  .title-sub {
+    font-size: 0.9rem;
+  }
+  
+  .logo-kanan {
+    height: 35px;
+    top: 0.3rem;
+    right: 0.3rem;
+  }
+  
+  .theme-toggle {
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .mobile-menu-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  /* Search and Filter Mobile */
+  .search-section, 
+  .filter-section {
+    margin: 0.3rem;
+    padding: 0.7rem;
+    border-radius: 8px;
+  }
+  
+  .search-box {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .search-input-group {
+    border-radius: 8px;
+  }
+  
+  .search-input-group input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  .search-submit {
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  .filter-container {
+    padding: 0.7rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.3rem;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 15px;
+  }
+  
+  /* Content Mobile */
+  .content {
+    padding: 0.3rem;
+  }
+  
+  .section {
+    padding: 0.2rem;
+  }
+  
+  .welcome-hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content {
+    padding: 0.5rem 0;
+  }
+  
+  .hero-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Cards Mobile */
+  .section-card {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
+  }
+  
+  .section-header {
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .card-actions {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+  
+  .action-btn {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+  
+  .card-content {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .card-image {
+    min-width: 100%;
+  }
+  
+  .card-image img {
+    max-height: 200px;
+  }
+  
+  .card-text {
+    min-width: 100%;
+  }
+  
+  .card-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .card-media {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .media-item {
+    min-width: 100%;
+  }
+  
+  iframe {
+    height: 180px;
+    border-radius: 6px;
+  }
+  
+  /* Popular Destinations Mobile */
+  .popular-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .popular-card {
+    border-radius: 6px;
+  }
+  
+  .popular-image {
+    height: 150px;
+  }
+  
+  .popular-content {
+    padding: 0.8rem;
+  }
+  
+  .popular-content h3 {
+    font-size: 0.9rem;
+  }
+  
+  .quick-view-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Categories Mobile */
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .category-card {
+    padding: 1rem 0.8rem;
+    border-radius: 6px;
+  }
+  
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-card i {
+    font-size: 1.2rem;
+  }
+  
+  .category-title {
+    font-size: 0.9rem;
+  }
+  
+  .category-description {
+    font-size: 0.8rem;
+  }
+  
+  /* Statistics Mobile */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .stat-card {
+    padding: 1rem 0.8rem;
+    border-radius: 6px;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  /* District Sections Mobile */
+  .district-hero {
+    padding: 1rem 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+  
+  .district-title {
+    font-size: 1.2rem;
+  }
+  
+  .district-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .destinations-container {
+    gap: 1rem;
+  }
+  
+  /* Favorites Mobile */
+  .favorites-empty {
+    padding: 2rem 1rem;
+  }
+  
+  .favorites-empty i {
+    font-size: 3rem;
+  }
+  
+  .favorites-empty h3 {
+    font-size: 1.1rem;
+  }
+  
+  .favorites-empty p {
+    font-size: 0.9rem;
+  }
+  
+  /* No Results Mobile */
+  .no-results {
+    padding: 2rem 1rem;
+  }
+  
+  .no-results-icon {
+    font-size: 2.5rem;
+  }
+  
+  .no-results h2 {
+    font-size: 1.1rem;
+  }
+  
+  .no-results p {
+    font-size: 0.9rem;
+  }
+  
+  .no-results-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Toast Mobile */
+  .toast {
+    bottom: 6rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    max-width: 90%;
+    text-align: center;
+    margin: 0 1rem;
+  }
+  
+  /* Footer Mobile */
+  footer {
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+  
+  .footer-description {
+    font-size: 0.9rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Utility classes for mobile */
+  small {
+    font-size: 0.7rem;
+  }
+  
+  .rating {
+    font-size: 0.8rem;
+  }
+  
+  .stars {
+    font-size: 0.8rem;
+  }
+  
+  .review-count {
+    font-size: 0.75rem;
+  }
+  
+  .district-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Mobile Devices (iPhone SE, etc) */
+@media (max-width: 320px) {
+  .header-title {
+    font-size: 1.1rem;
+    padding: 0 2rem;
+  }
+  
+  .title-main {
+    font-size: 0.9rem;
+  }
+  
+  .title-sub {
+    font-size: 0.8rem;
+  }
+  
+  .logo-kanan {
+    height: 30px;
+  }
+  
+  .mobile-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hero-title {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+  
+  .popular-content h3 {
+    font-size: 0.85rem;
+  }
+  
+  .bottom-nav-item {
+    min-width: 50px;
+    padding: 0.4rem;
+  }
+  
+  .bottom-nav-icon {
+    font-size: 1rem;
+  }
+  
+  .bottom-nav-text {
+    font-size: 0.6rem;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding: 0.5rem;
+  }
+  
+  .header-title {
+    font-size: 1rem;
+  }
+  
+  .mobile-nav-sidebar {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .search-section,
+  .filter-section {
+    margin: 0.2rem;
+    padding: 0.5rem;
+  }
+  
+  .content {
+    padding: 0.2rem;
+  }
+  
+  .welcome-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .card-image img,
+  .popular-image img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .back-to-top:hover {
+    transform: none;
+  }
+  
+  .mobile-nav-sidebar {
+    transition: none;
+  }
+}
+
+/* Dark mode auto detection */
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme]) {
+    --bg-color: var(--dark-bg);
+    --card-bg: var(--dark-card);
+    --text-color: var(--text-light);
+    --header-bg: #000;
+    --nav-bg: #222;
+    --footer-bg: #111;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    transform: none;
+  }
+  
+  .action-btn:hover {
+    transform: none;
+  }
+  
+  .filter-btn:hover {
+    background: var(--card-bg);
+    color: var(--text-color);
+  }
+  
+  .filter-btn.active:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  /* Increase tap targets for mobile */
+  .action-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .filter-btn {
+    min-height: 36px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-btn {
+    min-height: 44px;
+  }
+  
+  .mobile-nav-item {
+    min-height: 44px;
+  }
+  
+  .bottom-nav-item {
+    min-height: 44px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .mobile-menu-toggle,
+  .search-section,
+  .filter-section,
+  .back-to-top,
+  nav,
+  .bottom-nav,
+  .theme-toggle {
+    display: none !important;
+  }
+  
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .section-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
